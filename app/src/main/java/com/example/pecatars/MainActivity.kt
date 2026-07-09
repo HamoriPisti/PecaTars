@@ -4,17 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Card
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.example.pecatars.ui.theme.PecaTarsTheme
+import com.example.pecatars.ui.screens.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,29 +22,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun HomeScreen() {
-    Column(modifier = Modifier
-        .fillMaxSize()) {
-        Text(modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-            text = "Peca Társ")
-        MenuCard("Pakolás segéd")
-        MenuCard("Fogások")
-        MenuCard("Horgászhelyek")
-        MenuCard("Felszerelések")
-        MenuCard("Beállítások")
-    }
-}
 
-@Composable
-fun MenuCard(menuText: String){
-    Card(modifier = Modifier
-        .fillMaxWidth()
-        .padding(16.dp),
-        onClick = {}) {
-        Text(text = menuText,
-            modifier = Modifier.padding(16.dp))
-    }
-}
+
+
