@@ -14,7 +14,9 @@ import androidx.compose.ui.unit.dp
 import com.example.pecatars.ui.components.MenuCard
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onPackingClick: () -> Unit
+) {
     Column(modifier = Modifier
         .fillMaxSize()
         .padding(WindowInsets.safeDrawing.asPaddingValues())) {
@@ -22,10 +24,20 @@ fun HomeScreen() {
             .fillMaxWidth()
             .padding(16.dp),
             text = "Peca Társ")
-        MenuCard("Pakolás segéd")
-        MenuCard("Fogások")
-        MenuCard("Horgászhelyek")
-        MenuCard("Felszerelések")
-        MenuCard("Beállítások")
+        MenuCard(
+            "Pakolás segéd",
+            onClick = onPackingClick)
+        MenuCard(
+            "Fogások",
+            onClick = {})
+        MenuCard(
+            "Horgászhelyek",
+            onClick = {})
+        MenuCard(
+            "Felszerelések",
+            onClick = {})
+        MenuCard(
+            "Beállítások",
+            onClick = {})
     }
 }

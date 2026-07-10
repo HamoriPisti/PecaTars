@@ -7,16 +7,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.pecatars.model.PackingList
 
 @Composable
-fun MenuCard(
-    menuText: String,
-    onClick: () -> Unit){
+fun ListCard(packingList: PackingList){
     Card(modifier = Modifier
         .fillMaxWidth()
-        .padding(16.dp),
-        onClick = onClick) {
-        Text(text = menuText,
+        .padding(16.dp)
+    ) {
+        Text(text = packingList.name,
             modifier = Modifier.padding(16.dp))
     }
 }
