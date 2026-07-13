@@ -1,7 +1,7 @@
 package com.example.pecatars.model
 
-data class PackingList(
+data class PackingItem(
     val id: Int,
     val name: String,
-    val items: List<PackingItem>
+    val checked: Boolean
 )

@@ -8,28 +8,36 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.pecatars.R
 import com.example.pecatars.model.PackingList
-import com.example.pecatars.ui.components.ListCard
 import com.example.pecatars.ui.components.ScreenContainer
 
 @Composable
-fun PackingScreen (lists: List<PackingList>,
-                   onPackingListClick: (Int) -> Unit){
+fun PackingListScreen (packingList: PackingList){
 
     ScreenContainer {
         Text(modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp),
-            text = "Pakolás segéd")
-        LazyColumn(
-            modifier = Modifier.fillMaxSize()
-        ){
+            text = packingList.name)
 
-            items(lists) { packingList ->
-                ListCard(
-                    packingList = packingList,
-                    onClick = {onPackingListClick(packingList.id)})
+        if (packingList.items.isEmpty()) {
+            Text(
+                modifier = Modifier.padding(16.dp),
+                text = stringResource(R.string.empty_packing_list)
+            )
+        } else {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize()
+            ){
+
+                items(packingList.items) { item ->
+                    Text(modifier = Modifier.padding(16.dp),
+                        text = item.name
+                    )
+                }
             }
         }
     }

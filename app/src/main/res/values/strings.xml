@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">PecaTars</string>
+    <string name="app_name">PecaTárs</string>
+    <string name="empty_packing_list">Még nincs hozzáadott pakolási elem.</string>
 </resources>
